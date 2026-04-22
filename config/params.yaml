@@ -1,0 +1,10 @@
+results_topic: "/dialogflow_client/results"
+requests_topic: "/dialogflow_client/requests"
+start_srv: "/dialogflow_client/start"
+project_id: "homeworkbot-feck"
+play_audio: true
+use_audio_server: false
+server_name: "127.0.0.1"
+port: 4444
+debug: true
+default_language: "en-US"

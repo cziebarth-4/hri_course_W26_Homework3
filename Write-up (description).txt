@@ -1,0 +1,9 @@
+This chatbot is designed to act as a simple task manager using natural language input. I designed the task manager to allow the user to add tasks, view saved tasks, and delete tasks. The chatbot uses Dialogflow to interpret user commands and ROS to process and manage the data. All the tasks are stored in the "tasks.txt" file so they persist between interactions.
+
+The system works by connecting Dialogflow with a ROS node. When the user sends a message (such as “add homework 3”), the message is published to a ROS topic. The Dialogflow client processes the message and determines the intent (e.g., AddTask, ShowTasks, or DeleteTask). The result is then sent to the chatbot node through the /dialogflow_client/results topic. The chatbot node subscribes to this topic and runs a callback function whenever a new message is received. Based on the detected intent, the node performs the appropriate action. For example, it adds a task to a list, displays all saved tasks, or removes a task. The tasks are stored in a local text file (tasks.txt), which allows the chatbot to keep track of them.
+
+To interact with the chatbot, the user publishes messages using ROS commands. For example:
+
+Add a task: add homework 3
+Show tasks: show my tasks
+Delete a task: delete homework 3
